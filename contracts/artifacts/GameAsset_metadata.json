@@ -177,9 +177,34 @@
 						"internalType": "address",
 						"name": "newOwner",
 						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "price_in_Wei",
+						"type": "uint256"
 					}
 				],
 				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "Sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "Value",
+						"type": "uint256"
+					}
+				],
+				"name": "Received",
 				"type": "event"
 			},
 			{
@@ -221,6 +246,24 @@
 					}
 				],
 				"name": "approve",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "approveContract",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -277,6 +320,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "getPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -302,38 +358,12 @@
 			},
 			{
 				"inputs": [],
-				"name": "isAvailableTest",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "isList",
+				"name": "isAvailable",
 				"outputs": [
 					{
 						"internalType": "bool",
 						"name": "",
 						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "isOwnerTest",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -347,19 +377,6 @@
 						"internalType": "string",
 						"name": "",
 						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "owner",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -439,6 +456,19 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					}
+				],
+				"name": "sendUSDT",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
 						"name": "operator",
 						"type": "address"
 					},
@@ -449,6 +479,19 @@
 					}
 				],
 				"name": "setApprovalForAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "setPrice",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -539,6 +582,10 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -801,11 +848,11 @@
 			]
 		},
 		"contracts/MyToken.sol": {
-			"keccak256": "0x5582c2a50c9a20b376e5ad531d7fcc437cd55bfecff9090d6e0a0c3aaa32cc2f",
+			"keccak256": "0x1139acb6e566f49cc185c4f7851f892203000724771897a853ef39770e7ce0d0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://63202953961ec7a4c0cb1238903598f7c6906e54ad73cd1b28e2128c6fad9da8",
-				"dweb:/ipfs/QmdxzDzZLyg2DXYA6eQmriiMu3W2z2dzsBKVVCgEcXwUSH"
+				"bzz-raw://8e5f737d23a60c82f02e1bf0e6e5189d2441e7df811aa7431e93d4dc5ccaa85c",
+				"dweb:/ipfs/QmdjNg3va3aKc15ab25CfYZVkfPxAnJzARdj4Ztreqsn26"
 			]
 		}
 	},
