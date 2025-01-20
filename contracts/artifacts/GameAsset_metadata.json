@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.26+commit.8a97fa7a"
+		"version": "0.8.22+commit.4fc1097e"
 	},
 	"language": "Solidity",
 	"output": {
@@ -721,9 +721,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/MyToken.sol": "GameAsset"
+			"contracts/GameAsset.sol": "GameAsset"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -800,11 +800,11 @@
 			]
 		},
 		"@openzeppelin/contracts/utils/Strings.sol": {
-			"keccak256": "0x725209b582291bb83058e3078624b53d15a133f7401c30295e7f3704181d2aed",
+			"keccak256": "0x44f87e91783e88415bde66f1a63f6c7f0076f2d511548820407d5c95643ac56c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0564ddb19c6d870e27b789d8f985283d815267ad7224883c2d5243c8bacc7dc0",
-				"dweb:/ipfs/QmeC953H4sj88ZRFdJNFdmpf7J9SksP1wK4jyMHLo66z49"
+				"bzz-raw://13a51bc2b23827744dcf5bad10c69e72528cf015a6fe48c93632cdb2c0eb1251",
+				"dweb:/ipfs/QmZwPA47Yqgje1qtkdEFEja8ntTahMStYzKf5q3JRnaR7d"
 			]
 		},
 		"@openzeppelin/contracts/utils/introspection/ERC165.sol": {
@@ -847,12 +847,12 @@
 				"dweb:/ipfs/QmVUSvooZKEdEdap619tcJjTLcAuH6QBdZqAzWwnAXZAWJ"
 			]
 		},
-		"contracts/MyToken.sol": {
-			"keccak256": "0x1139acb6e566f49cc185c4f7851f892203000724771897a853ef39770e7ce0d0",
+		"contracts/GameAsset.sol": {
+			"keccak256": "0x4d60e99624b67907662e2193b61cbf771ea10a7828af1852a71c56389b75257c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8e5f737d23a60c82f02e1bf0e6e5189d2441e7df811aa7431e93d4dc5ccaa85c",
-				"dweb:/ipfs/QmdjNg3va3aKc15ab25CfYZVkfPxAnJzARdj4Ztreqsn26"
+				"bzz-raw://8e81e8a0353f73117c6c1dd52c2426413edacbf0bff275ca96c70831434038a6",
+				"dweb:/ipfs/Qmf1rBWFWrmrUz4JW9u6xpDW5B3qC6YKsrUjQdQ6Y3HA7D"
 			]
 		}
 	},
