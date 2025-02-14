@@ -1,0 +1,37 @@
+{
+	"compiler": {
+		"version": "0.4.26+commit.4563c3fc"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"methods": {},
+			"title": "SafeMath\r"
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/TestToken.sol": "SafeMath"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/TestToken.sol": {
+			"keccak256": "0xee08dffd53ece919ca526cfd0a6edcfa326e9d9fc30f432eb127686e3f6a3f4d",
+			"urls": [
+				"bzzr://4c65d3b232b699dddcc1c3383104fe805df91627af3a1a5844a84febee217738"
+			]
+		}
+	},
+	"version": 1
+}

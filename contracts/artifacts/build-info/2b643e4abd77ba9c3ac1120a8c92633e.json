@@ -1,0 +1,72 @@
+{
+	"id": "2b643e4abd77ba9c3ac1120a8c92633e",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.26",
+	"solcLongVersion": "0.8.26+commit.8a97fa7a",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"contracts/GameAssetExchanges.sol": {
+				"content": "// // SPDX-License-Identifier: MIT\r\n// pragma solidity ^0.8.20;\r\n\r\n\r\n\r\n// struct ChangeLog {\r\n//     uint256 timestamp;\r\n//     uint8 operation; // 操作类型：0:\"add\", 1:\"remove\", 2:\"modify\"\r\n//     address assert;\r\n// }\r\n\r\n\r\n// contract GameAssetExchanges{\r\n//     address deployer;\r\n//     mapping(address => address) public Assest;\r\n//     address[] public GameAssetAddress;\r\n//     uint last_transision = 0;\r\n//     ChangeLog[] public logs;\r\n    \r\n//     constructor() {\r\n//         deployer = msg.sender;\r\n//     }\r\n\r\n\r\n//     function getGameAssetsByIndex() public view returns(address[] memory){\r\n//         return GameAssetAddress;\r\n//     }\r\n\r\n//     function createAsset() public{ \r\n//         require(deployer == msg.sender);\r\n//         GameAsset newAsset = new GameAsset();\r\n//         recordArrayChange(newAsset.getAddress(), 0);\r\n//     }\r\n\r\n//     function recordArrayChange(address asset, uint8 operation) private {\r\n//         logs.push(ChangeLog(block.timestamp, operation, asset));\r\n//     }\r\n\r\n// }\r\n\r\n// import \"@openzeppelin/contracts/token/ERC721/ERC721.sol\";\r\n\r\n// interface IERC20 { // 用得到的Function, 不要更改\r\n//     function transfer(address _to, uint256 _value) external returns (bool);\r\n//     function balanceOf(address account) external view returns (uint256);\r\n//     function approve(address spender, uint256 amount) external returns (bool);\r\n//     function _mint(address receiver, uint256 amount) external returns (bool);// sepolia usdt function, remove when deploy on mainnet\r\n//     // function name() external returns (string memory);\r\n// }\r\n\r\n// contract GameAsset is ERC721 {\r\n//     address owner;\r\n//     address AssetAddress;\r\n//     bool isList;\r\n//     uint price_in_Wei;\r\n//     uint usdt_holder;\r\n\r\n//     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner, uint indexed price_in_Wei);\r\n//     constructor() ERC721(\"BIT_GameAsset\", \"BIT_GA\") {\r\n//         owner = msg.sender;\r\n//         isList = false;\r\n//         price_in_Wei = 1;\r\n//         AssetAddress = address(this);\r\n//     }\r\n\r\n\r\n//     event Received(address Sender, uint Value);\r\n//     receive() external payable{\r\n//         require(msg.value == price_in_Wei, \"The amount is incorrect.\");\r\n//         emit Received(msg.sender,msg.value);\r\n//         transferOwnership(msg.sender);\r\n//     }\r\n\r\n\r\n//     modifier onlyOwner() {\r\n//         require(msg.sender == owner, \"Only the Asset owner can call this function\");\r\n//         _;\r\n//     }\r\n\r\n//     modifier onlyAvailable() {\r\n//         require(isList == true, \"The Asset is not available now\");\r\n//         _;\r\n//     }\r\n\r\n\r\n\r\n//     function setPrice(uint newPrice) public onlyOwner{\r\n//         price_in_Wei = newPrice;\r\n//     }  \r\n\r\n//     function getPrice() public view onlyAvailable returns(uint){\r\n//         return price_in_Wei;\r\n//     }\r\n//     function getOwner() public onlyAvailable view returns(address){\r\n//         return owner;\r\n//     }\r\n//     function getAddress() public returns(address){\r\n//         return AssetAddress;\r\n//     }\r\n\r\n//     function isAvailable() public view returns(bool){\r\n//         return isList;\r\n//     }\r\n\r\n\r\n//     function transferOwnership(address newOwner) public onlyOwner {\r\n//         require(newOwner != address(0), \"Invalid new owner address\");\r\n//         emit OwnershipTransferred(owner, newOwner, price_in_Wei);\r\n//         owner = newOwner;\r\n//     }\r\n\r\n    \r\n//     function sendUSDT(address _to) external {\r\n//         // IERC20 usdt = IERC20(address(0xdAC17F958D2ee523a2206206994597C13D831ec7)); // mainnet USDT\r\n//         IERC20 usdt = IERC20(address(0x7169D38820dfd117C3FA1f22a697dBA58d90BA06)); // Sepolia USDT\r\n        \r\n//         require(usdt.balanceOf(owner) >= usdt_holder, \"Insufficient balance in contract\");\r\n//         // transfers USDT that belong to your contract to the specified address\r\n//         require(usdt.transfer(_to, usdt_holder), \"Failed to send USDT\");\r\n//     }\r\n\r\n//     function approveContract(address _spender, uint256 _amount) external {\r\n//         // IERC20 usdt = IERC20(address(0xdAC17F958D2ee523a2206206994597C13D831ec7)); // mainnet USDT\r\n//         IERC20 usdt = IERC20(address(0x7169D38820dfd117C3FA1f22a697dBA58d90BA06)); // Sepolia USDT\r\n//         require(usdt.approve(_spender, _amount), \"Approval failed\");\r\n//     }\r\n\r\n//     function mint_usdt(address _receiver, uint256 _amount) external payable{\r\n//         IERC20 usdt = IERC20(address(0x7169D38820dfd117C3FA1f22a697dBA58d90BA06)); // Sepolia USDT\r\n//         require(usdt._mint(_receiver, _amount), \"mint usdt failed\");\r\n//     }\r\n\r\n// }"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"errors": [
+			{
+				"component": "general",
+				"errorCode": "3420",
+				"formattedMessage": "Warning: Source file does not specify required compiler version! Consider adding \"pragma solidity ^0.8.26;\"\n--> contracts/GameAssetExchanges.sol\n\n",
+				"message": "Source file does not specify required compiler version! Consider adding \"pragma solidity ^0.8.26;\"",
+				"severity": "warning",
+				"sourceLocation": {
+					"end": -1,
+					"file": "contracts/GameAssetExchanges.sol",
+					"start": -1
+				},
+				"type": "Warning"
+			}
+		],
+		"sources": {
+			"contracts/GameAssetExchanges.sol": {
+				"ast": {
+					"absolutePath": "contracts/GameAssetExchanges.sol",
+					"exportedSymbols": {},
+					"id": 1,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [],
+					"src": "4616:0:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

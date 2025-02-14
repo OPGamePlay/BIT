@@ -5,30 +5,28 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 interface IERC20 { // 用得到的Function, 不要更改
     function transfer(address _to, uint256 _value) external returns (bool);
-    function balanceOf(address account) external view returns (uint256);
+    // function balanceOf(address account) external view returns (uint256);
     function approve(address spender, uint256 amount) external returns (bool);
+    function transferFrom(address _from, address _to, uint256 _value) external returns (bool);
+
+    function _mint(address receiver, uint256 amount) external returns (bool);// sepolia usdt function, remove when deploy on mainnet
+
 }
 
 contract GameAsset is ERC721 {
-    address owner;
-    address payable ownerWallet;
-    bool isList;
-    uint price_in_Wei;
-    uint usdt_holder;
+    address public owner;
+    bool public isList;
+    uint price_in_uUSDT;
+    string AssetMetadata; //IPFS Hash
+    IERC20 usdt;
 
-    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner, uint indexed price_in_Wei);
-    constructor() ERC721("BIT_GameAsset", "BIT_GA") {
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner, uint indexed price_in_uUSDT);
+    constructor(string memory MetadataIPFS) ERC721("BIT_GameAsset", "BIT_GA") {
+        AssetMetadata = MetadataIPFS; // Bind to a IPFS Hash
         owner = msg.sender;
         isList = false;
-        price_in_Wei = 1;
-    }
-
-
-    event Received(address Sender, uint Value);
-    receive() external payable{
-        require(msg.value == price_in_Wei, "The amount is incorrect.");
-        emit Received(msg.sender,msg.value);
-        transferOwnership(msg.sender);
+        price_in_uUSDT = 1000000; // Defualt price| 1,000,000uUSDT = 1 USDT
+        usdt = IERC20(address(0x32316fE3DDf621fdAa71437Df19b94F9830c1118)); // USDT Address
     }
 
 
@@ -42,45 +40,47 @@ contract GameAsset is ERC721 {
         _;
     }
 
-
+    function setAvailable(bool newIslist) public onlyOwner{
+        isList = newIslist;
+    }
 
     function setPrice(uint newPrice) public onlyOwner{
-        price_in_Wei = newPrice;
+        price_in_uUSDT = newPrice;
     }  
-
     function getPrice() public view onlyAvailable returns(uint){
-        return price_in_Wei;
-    }
-    function getOwner() public onlyAvailable view returns(address){
-        return owner;
-    }
-    function isAvailable() public view returns(bool){
-        return isList;
+        return price_in_uUSDT;
     }
 
-
+    // Not for trade. Just a gift funcion.
     function transferOwnership(address newOwner) public onlyOwner {
         require(newOwner != address(0), "Invalid new owner address");
-        emit OwnershipTransferred(owner, newOwner, price_in_Wei);
+        emit OwnershipTransferred(owner, newOwner, price_in_uUSDT);
         owner = newOwner;
     }
 
-    
-    function sendUSDT(address _to) external {
-         // This is the mainnet USDT contract address
-         // Using on other networks (rinkeby, local, ...) would fail
-         //  - there's no contract on this address on other networks
-        IERC20 usdt = IERC20(address(0xdAC17F958D2ee523a2206206994597C13D831ec7)); // USDT contract address
+
+    function Purchase() public onlyAvailable{
+        require(usdt.approve(address(this), price_in_uUSDT), "Approval failed"); // when buyer use this function, give approval to this contract to transfer usdt.
+        require(usdt.transferFrom(msg.sender , owner, price_in_uUSDT), "Failed to send USDT");// once the contract get approval, transfer the usdt to owner.
         
-        require(usdt.balanceOf(owner) >= usdt_holder, "Insufficient balance in contract");
-        // transfers USDT that belong to your contract to the specified address
-        require(usdt.transfer(_to, usdt_holder), "Failed to send USDT");
+        // transferOwnership after payment
+        address newOwner = address(msg.sender);
+        emit OwnershipTransferred(owner, newOwner, price_in_uUSDT);
+        owner = newOwner;
+        isList = false;
     }
 
-    function approveContract(address _spender, uint256 _amount) external {
-        IERC20 usdt = IERC20(address(0xdAC17F958D2ee523a2206206994597C13D831ec7)); // USDT contract address
-
-        require(usdt.approve(_spender, _amount), "Approval failed");
+    function getAddress() view public returns(address){
+        return address(this);
     }
+    
+    // function sendUSDT(address _to) external {
+    //     // IERC20 usdt = IERC20(address(0xdAC17F958D2ee523a2206206994597C13D831ec7)); // mainnet USDT
+    //     IERC20 usdt = IERC20(address(0x7169D38820dfd117C3FA1f22a697dBA58d90BA06)); // Sepolia USDT
+        
+    //     require(usdt.balanceOf(owner) >= usdt_holder, "Insufficient balance in contract");
+    //     // transfers USDT that belong to your contract to the specified address
+    //     require(usdt.transfer(_to, usdt_holder), "Failed to send USDT");
+    // }
 
 }

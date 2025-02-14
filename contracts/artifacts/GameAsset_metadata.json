@@ -1,12 +1,18 @@
 {
 	"compiler": {
-		"version": "0.8.22+commit.4fc1097e"
+		"version": "0.8.26+commit.8a97fa7a"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "MetadataIPFS",
+						"type": "string"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
@@ -181,30 +187,11 @@
 					{
 						"indexed": true,
 						"internalType": "uint256",
-						"name": "price_in_Wei",
+						"name": "price_in_uUSDT",
 						"type": "uint256"
 					}
 				],
 				"name": "OwnershipTransferred",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": false,
-						"internalType": "address",
-						"name": "Sender",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "Value",
-						"type": "uint256"
-					}
-				],
-				"name": "Received",
 				"type": "event"
 			},
 			{
@@ -233,6 +220,13 @@
 				"type": "event"
 			},
 			{
+				"inputs": [],
+				"name": "Purchase",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -246,24 +240,6 @@
 					}
 				],
 				"name": "approve",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_spender",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_amount",
-						"type": "uint256"
-					}
-				],
-				"name": "approveContract",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -288,14 +264,8 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "tokenId",
-						"type": "uint256"
-					}
-				],
-				"name": "getApproved",
+				"inputs": [],
+				"name": "getAddress",
 				"outputs": [
 					{
 						"internalType": "address",
@@ -307,8 +277,14 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "getOwner",
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getApproved",
 				"outputs": [
 					{
 						"internalType": "address",
@@ -358,7 +334,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "isAvailable",
+				"name": "isList",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -377,6 +353,19 @@
 						"internalType": "string",
 						"name": "",
 						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -456,19 +445,6 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_to",
-						"type": "address"
-					}
-				],
-				"name": "sendUSDT",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
 						"name": "operator",
 						"type": "address"
 					},
@@ -479,6 +455,19 @@
 					}
 				],
 				"name": "setApprovalForAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "newIslist",
+						"type": "bool"
+					}
+				],
+				"name": "setAvailable",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -582,10 +571,6 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
-			},
-			{
-				"stateMutability": "payable",
-				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -723,7 +708,7 @@
 		"compilationTarget": {
 			"contracts/GameAsset.sol": "GameAsset"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -800,11 +785,11 @@
 			]
 		},
 		"@openzeppelin/contracts/utils/Strings.sol": {
-			"keccak256": "0x44f87e91783e88415bde66f1a63f6c7f0076f2d511548820407d5c95643ac56c",
+			"keccak256": "0x4698a3b9e053c05db8466bddc85fe5732d4e52eeede6b03769dc0fe099998078",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://13a51bc2b23827744dcf5bad10c69e72528cf015a6fe48c93632cdb2c0eb1251",
-				"dweb:/ipfs/QmZwPA47Yqgje1qtkdEFEja8ntTahMStYzKf5q3JRnaR7d"
+				"bzz-raw://db853b48d7358744ec277afa884a0514c595d90933d497835b75738ade9586b4",
+				"dweb:/ipfs/QmTRBWHtor5jHpheZDA3g5Kf5mPqBQi77X25Q1CQRrS2SJ"
 			]
 		},
 		"@openzeppelin/contracts/utils/introspection/ERC165.sol": {
@@ -848,11 +833,11 @@
 			]
 		},
 		"contracts/GameAsset.sol": {
-			"keccak256": "0x4d60e99624b67907662e2193b61cbf771ea10a7828af1852a71c56389b75257c",
+			"keccak256": "0x15c48f21179c267da334fe037dd3c4805928af6de81fa29cbfd30d738ff90ed9",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8e81e8a0353f73117c6c1dd52c2426413edacbf0bff275ca96c70831434038a6",
-				"dweb:/ipfs/Qmf1rBWFWrmrUz4JW9u6xpDW5B3qC6YKsrUjQdQ6Y3HA7D"
+				"bzz-raw://b049dd3e231a9052471811feb627ac6dd27828f9204b37a71dc99a398a045404",
+				"dweb:/ipfs/QmQKYSxrZR5JfUEtpCxkvwVphSgFyWhqhmYCmqZxGREEot"
 			]
 		}
 	},

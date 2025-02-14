@@ -1,10 +1,34 @@
 {
 	"compiler": {
-		"version": "0.8.22+commit.4fc1097e"
+		"version": "0.8.26+commit.8a97fa7a"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "_mint",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
 			{
 				"inputs": [
 					{
@@ -33,23 +57,33 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "account",
+						"name": "_to",
 						"type": "address"
-					}
-				],
-				"name": "balanceOf",
-				"outputs": [
+					},
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "_value",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
+				"name": "transfer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
 				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_from",
+						"type": "address"
+					},
 					{
 						"internalType": "address",
 						"name": "_to",
@@ -61,7 +95,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "transfer",
+				"name": "transferFrom",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -88,7 +122,7 @@
 		"compilationTarget": {
 			"contracts/GameAsset.sol": "IERC20"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -165,11 +199,11 @@
 			]
 		},
 		"@openzeppelin/contracts/utils/Strings.sol": {
-			"keccak256": "0x44f87e91783e88415bde66f1a63f6c7f0076f2d511548820407d5c95643ac56c",
+			"keccak256": "0x4698a3b9e053c05db8466bddc85fe5732d4e52eeede6b03769dc0fe099998078",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://13a51bc2b23827744dcf5bad10c69e72528cf015a6fe48c93632cdb2c0eb1251",
-				"dweb:/ipfs/QmZwPA47Yqgje1qtkdEFEja8ntTahMStYzKf5q3JRnaR7d"
+				"bzz-raw://db853b48d7358744ec277afa884a0514c595d90933d497835b75738ade9586b4",
+				"dweb:/ipfs/QmTRBWHtor5jHpheZDA3g5Kf5mPqBQi77X25Q1CQRrS2SJ"
 			]
 		},
 		"@openzeppelin/contracts/utils/introspection/ERC165.sol": {
@@ -213,11 +247,11 @@
 			]
 		},
 		"contracts/GameAsset.sol": {
-			"keccak256": "0x4d60e99624b67907662e2193b61cbf771ea10a7828af1852a71c56389b75257c",
+			"keccak256": "0x15c48f21179c267da334fe037dd3c4805928af6de81fa29cbfd30d738ff90ed9",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8e81e8a0353f73117c6c1dd52c2426413edacbf0bff275ca96c70831434038a6",
-				"dweb:/ipfs/Qmf1rBWFWrmrUz4JW9u6xpDW5B3qC6YKsrUjQdQ6Y3HA7D"
+				"bzz-raw://b049dd3e231a9052471811feb627ac6dd27828f9204b37a71dc99a398a045404",
+				"dweb:/ipfs/QmQKYSxrZR5JfUEtpCxkvwVphSgFyWhqhmYCmqZxGREEot"
 			]
 		}
 	},
