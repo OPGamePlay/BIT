@@ -9,36 +9,12 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "receiver",
+						"name": "_spender",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "_mint",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "spender",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "amount",
+						"name": "_value",
 						"type": "uint256"
 					}
 				],
@@ -57,24 +33,19 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_to",
+						"name": "account",
 						"type": "address"
-					},
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "_value",
+						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "transfer",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -122,7 +93,7 @@
 		"compilationTarget": {
 			"contracts/GameAsset.sol": "IERC20"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -247,11 +218,11 @@
 			]
 		},
 		"contracts/GameAsset.sol": {
-			"keccak256": "0x15c48f21179c267da334fe037dd3c4805928af6de81fa29cbfd30d738ff90ed9",
+			"keccak256": "0x6ab09653764fac7010169a376736c874d81a9bce13ac3e1eff3521eb7ea6579b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b049dd3e231a9052471811feb627ac6dd27828f9204b37a71dc99a398a045404",
-				"dweb:/ipfs/QmQKYSxrZR5JfUEtpCxkvwVphSgFyWhqhmYCmqZxGREEot"
+				"bzz-raw://a24190cfd15b6347e2c78bfc2a5e4617db112b8df894c4cb07fd0d6f1b40fa63",
+				"dweb:/ipfs/QmdpUvmxKQkPLJZ9Sspd5y2DezA4XYqqtNQrPrB3ANdcXZ"
 			]
 		}
 	},

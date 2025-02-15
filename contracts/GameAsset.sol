@@ -1,24 +1,26 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
+// import "@openzeppelin/contracts/interfaces/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+using SafeERC20 for IERC20;
 
-interface IERC20 { // 用得到的Function, 不要更改
-    function transfer(address _to, uint256 _value) external returns (bool);
-    // function balanceOf(address account) external view returns (uint256);
-    function approve(address spender, uint256 amount) external returns (bool);
-    function transferFrom(address _from, address _to, uint256 _value) external returns (bool);
 
-    function _mint(address receiver, uint256 amount) external returns (bool);// sepolia usdt function, remove when deploy on mainnet
+// interface IERC20 { 
+//     // function transfer(address _to, uint256 _value) external returns (bool);
+//     function balanceOf(address account) external view returns (uint256);
+//     function approve(address _spender, uint256 _value) external returns (bool);
+//     function transferFrom(address _from, address _to, uint256 _value) external returns (bool);
+// }
 
-}
 
 contract GameAsset is ERC721 {
     address public owner;
     bool public isList;
     uint price_in_uUSDT;
     string AssetMetadata; //IPFS Hash
-    IERC20 usdt;
+    IERC20 public usdt;
 
     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner, uint indexed price_in_uUSDT);
     constructor(string memory MetadataIPFS) ERC721("BIT_GameAsset", "BIT_GA") {
@@ -26,7 +28,7 @@ contract GameAsset is ERC721 {
         owner = msg.sender;
         isList = false;
         price_in_uUSDT = 1000000; // Defualt price| 1,000,000uUSDT = 1 USDT
-        usdt = IERC20(address(0x32316fE3DDf621fdAa71437Df19b94F9830c1118)); // USDT Address
+        usdt = IERC20(address(0x647c048AB7757a981f7303AD0173750666309d52)); // USDT Address
     }
 
 
@@ -58,10 +60,23 @@ contract GameAsset is ERC721 {
         owner = newOwner;
     }
 
+    function getBalance(address _address) external view returns(uint256){
+        return usdt.balanceOf(_address);
+    }
 
-    function Purchase() public onlyAvailable{
-        require(usdt.approve(address(this), price_in_uUSDT), "Approval failed"); // when buyer use this function, give approval to this contract to transfer usdt.
-        require(usdt.transferFrom(msg.sender , owner, price_in_uUSDT), "Failed to send USDT");// once the contract get approval, transfer the usdt to owner.
+    function getApprove() public returns(bool){
+        usdt.forceApprove(address(this), price_in_uUSDT);
+        // require(success, "Approval failed"); // when buyer use this function, give approval to this contract to transfer usdt.
+        return true;
+    }
+
+
+    function Purchase() external onlyAvailable{
+        // require(usdt.forceApprove(address(this), price_in_uUSDT), "Approval failed"); // when buyer use this function, give approval to this contract to transfer usdt.
+        // require(usdt.safeTransferFrom(msg.sender , owner, price_in_uUSDT), "Failed to send USDT");// once the contract get approval, transfer the usdt to owner.
+        
+        usdt.forceApprove(address(this), price_in_uUSDT);
+        usdt.safeTransferFrom(msg.sender , owner, price_in_uUSDT);
         
         // transferOwnership after payment
         address newOwner = address(msg.sender);
@@ -73,14 +88,4 @@ contract GameAsset is ERC721 {
     function getAddress() view public returns(address){
         return address(this);
     }
-    
-    // function sendUSDT(address _to) external {
-    //     // IERC20 usdt = IERC20(address(0xdAC17F958D2ee523a2206206994597C13D831ec7)); // mainnet USDT
-    //     IERC20 usdt = IERC20(address(0x7169D38820dfd117C3FA1f22a697dBA58d90BA06)); // Sepolia USDT
-        
-    //     require(usdt.balanceOf(owner) >= usdt_holder, "Insufficient balance in contract");
-    //     // transfers USDT that belong to your contract to the specified address
-    //     require(usdt.transfer(_to, usdt_holder), "Failed to send USDT");
-    // }
-
 }
