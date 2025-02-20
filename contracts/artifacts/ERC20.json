@@ -44,7 +44,6 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"_totalSupply()": "3eaaf86b",
 			"allowance(address,address)": "dd62ed3e",
 			"approve(address,uint256)": "095ea7b3",
 			"balanceOf(address)": "70a08231",
@@ -67,7 +66,12 @@
 				}
 			],
 			"name": "approve",
-			"outputs": [],
+			"outputs": [
+				{
+					"name": "",
+					"type": "bool"
+				}
+			],
 			"payable": false,
 			"stateMutability": "nonpayable",
 			"type": "function"
@@ -103,23 +107,14 @@
 				}
 			],
 			"name": "transferFrom",
-			"outputs": [],
-			"payable": false,
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"constant": true,
-			"inputs": [],
-			"name": "_totalSupply",
 			"outputs": [
 				{
 					"name": "",
-					"type": "uint256"
+					"type": "bool"
 				}
 			],
 			"payable": false,
-			"stateMutability": "view",
+			"stateMutability": "nonpayable",
 			"type": "function"
 		},
 		{
@@ -154,7 +149,12 @@
 				}
 			],
 			"name": "transfer",
-			"outputs": [],
+			"outputs": [
+				{
+					"name": "",
+					"type": "bool"
+				}
+			],
 			"payable": false,
 			"stateMutability": "nonpayable",
 			"type": "function"

@@ -15,6 +15,20 @@
 				"type": "function"
 			},
 			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_newPauser",
+						"type": "address"
+					}
+				],
+				"name": "updatePauser",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"constant": true,
 				"inputs": [],
 				"name": "paused",
@@ -52,6 +66,20 @@
 				"type": "function"
 			},
 			{
+				"constant": true,
+				"inputs": [],
+				"name": "pauser",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"constant": false,
 				"inputs": [
 					{
@@ -76,10 +104,43 @@
 				"inputs": [],
 				"name": "Unpause",
 				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "newAddress",
+						"type": "address"
+					}
+				],
+				"name": "PauserChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
 			}
 		],
 		"devdoc": {
 			"methods": {
+				"owner()": {
+					"details": "Tells the address of the owner\r",
+					"return": "the address of the owner\r"
+				},
 				"pause()": {
 					"details": "called by the owner to pause, triggers stopped state\r"
 				},
@@ -91,6 +152,9 @@
 				},
 				"unpause()": {
 					"details": "called by the owner to unpause, returns to normal state\r"
+				},
+				"updatePauser(address)": {
+					"details": "update the pauser role\r"
 				}
 			},
 			"title": "Pausable\r"
@@ -101,9 +165,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/USDT.sol": "Pausable"
+			"contracts/FiatTokenV1.sol": "Pausable"
 		},
-		"evmVersion": "byzantium",
+		"evmVersion": "constantinople",
 		"libraries": {},
 		"optimizer": {
 			"enabled": false,
@@ -112,10 +176,10 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/USDT.sol": {
-			"keccak256": "0xee08dffd53ece919ca526cfd0a6edcfa326e9d9fc30f432eb127686e3f6a3f4d",
+		"contracts/FiatTokenV1.sol": {
+			"keccak256": "0x4af10d6d73b435bf8b63c5e8ca60f2d618fecd842a863b739115ac9d6c0b2569",
 			"urls": [
-				"bzzr://4c65d3b232b699dddcc1c3383104fe805df91627af3a1a5844a84febee217738"
+				"bzzr://4676109493971818e005f53ef664995e5cb011a24fbdfa89b7576f948177fc5b"
 			]
 		}
 	},

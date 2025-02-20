@@ -1,0 +1,223 @@
+{
+	"compiler": {
+		"version": "0.4.26+commit.4563c3fc"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_account",
+						"type": "address"
+					}
+				],
+				"name": "unBlacklist",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_newBlacklister",
+						"type": "address"
+					}
+				],
+				"name": "updateBlacklister",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "blacklister",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_account",
+						"type": "address"
+					}
+				],
+				"name": "blacklist",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "_account",
+						"type": "address"
+					}
+				],
+				"name": "isBlacklisted",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "_account",
+						"type": "address"
+					}
+				],
+				"name": "Blacklisted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "_account",
+						"type": "address"
+					}
+				],
+				"name": "UnBlacklisted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "newBlacklister",
+						"type": "address"
+					}
+				],
+				"name": "BlacklisterChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			}
+		],
+		"devdoc": {
+			"methods": {
+				"blacklist(address)": {
+					"details": "Adds account to blacklist\r",
+					"params": {
+						"_account": "The address to blacklist\r"
+					}
+				},
+				"isBlacklisted(address)": {
+					"details": "Checks if account is blacklisted\r",
+					"params": {
+						"_account": "The address to check    \r"
+					}
+				},
+				"owner()": {
+					"details": "Tells the address of the owner\r",
+					"return": "the address of the owner\r"
+				},
+				"transferOwnership(address)": {
+					"details": "Allows the current owner to transfer control of the contract to a newOwner.\r",
+					"params": {
+						"newOwner": "The address to transfer ownership to.\r"
+					}
+				},
+				"unBlacklist(address)": {
+					"details": "Removes account from blacklist\r",
+					"params": {
+						"_account": "The address to remove from the blacklist\r"
+					}
+				}
+			},
+			"title": "Blacklistable Token\r"
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/FiatTokenV1.sol": "Blacklistable"
+		},
+		"evmVersion": "constantinople",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/FiatTokenV1.sol": {
+			"keccak256": "0x4af10d6d73b435bf8b63c5e8ca60f2d618fecd842a863b739115ac9d6c0b2569",
+			"urls": [
+				"bzzr://4676109493971818e005f53ef664995e5cb011a24fbdfa89b7576f948177fc5b"
+			]
+		}
+	},
+	"version": 1
+}

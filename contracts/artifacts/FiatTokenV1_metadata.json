@@ -1,0 +1,890 @@
+{
+	"compiler": {
+		"version": "0.4.26+commit.4563c3fc"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_spender",
+						"type": "address"
+					},
+					{
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_account",
+						"type": "address"
+					}
+				],
+				"name": "unBlacklist",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_from",
+						"type": "address"
+					},
+					{
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "minter",
+						"type": "address"
+					}
+				],
+				"name": "removeMinter",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "decimals",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"name": "_symbol",
+						"type": "string"
+					},
+					{
+						"name": "_currency",
+						"type": "string"
+					},
+					{
+						"name": "_decimals",
+						"type": "uint8"
+					},
+					{
+						"name": "_masterMinter",
+						"type": "address"
+					},
+					{
+						"name": "_pauser",
+						"type": "address"
+					},
+					{
+						"name": "_blacklister",
+						"type": "address"
+					},
+					{
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "initialize",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "masterMinter",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "unpause",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "mint",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "burn",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "minter",
+						"type": "address"
+					},
+					{
+						"name": "minterAllowedAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "configureMinter",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_newPauser",
+						"type": "address"
+					}
+				],
+				"name": "updatePauser",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "paused",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "pause",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "minter",
+						"type": "address"
+					}
+				],
+				"name": "minterAllowance",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "pauser",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_newMasterMinter",
+						"type": "address"
+					}
+				],
+				"name": "updateMasterMinter",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "isMinter",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_newBlacklister",
+						"type": "address"
+					}
+				],
+				"name": "updateBlacklister",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "blacklister",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"name": "spender",
+						"type": "address"
+					}
+				],
+				"name": "allowance",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "currency",
+				"outputs": [
+					{
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_account",
+						"type": "address"
+					}
+				],
+				"name": "blacklist",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "_account",
+						"type": "address"
+					}
+				],
+				"name": "isBlacklisted",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "minter",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Mint",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "burner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Burn",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "minter",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "minterAllowedAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "MinterConfigured",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "oldMinter",
+						"type": "address"
+					}
+				],
+				"name": "MinterRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "newMasterMinter",
+						"type": "address"
+					}
+				],
+				"name": "MasterMinterChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "_account",
+						"type": "address"
+					}
+				],
+				"name": "Blacklisted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "_account",
+						"type": "address"
+					}
+				],
+				"name": "UnBlacklisted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "newBlacklister",
+						"type": "address"
+					}
+				],
+				"name": "BlacklisterChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "Pause",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "Unpause",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "newAddress",
+						"type": "address"
+					}
+				],
+				"name": "PauserChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			}
+		],
+		"devdoc": {
+			"methods": {
+				"allowance(address,address)": {
+					"details": "Get allowed amount for an account\r",
+					"params": {
+						"owner": "address The account owner\r",
+						"spender": "address The account spender\r"
+					}
+				},
+				"approve(address,uint256)": {
+					"details": "Adds blacklisted check to approve\r",
+					"return": "True if the operation was successful.\r"
+				},
+				"balanceOf(address)": {
+					"details": "Get token balance of an account\r",
+					"params": {
+						"account": "address The account\r"
+					}
+				},
+				"blacklist(address)": {
+					"details": "Adds account to blacklist\r",
+					"params": {
+						"_account": "The address to blacklist\r"
+					}
+				},
+				"burn(uint256)": {
+					"details": "allows a minter to burn some of its own tokens\r Validates that caller is a minter and that sender is not blacklisted\r amount is less than or equal to the minter's account balance\r",
+					"params": {
+						"_amount": "uint256 the amount of tokens to be burned\r"
+					}
+				},
+				"configureMinter(address,uint256)": {
+					"details": "Function to add/update a new minter\r",
+					"params": {
+						"minter": "The address of the minter\r",
+						"minterAllowedAmount": "The minting amount allowed for the minter\r"
+					},
+					"return": "True if the operation was successful.\r"
+				},
+				"isBlacklisted(address)": {
+					"details": "Checks if account is blacklisted\r",
+					"params": {
+						"_account": "The address to check    \r"
+					}
+				},
+				"isMinter(address)": {
+					"details": "Checks if account is a minter\r",
+					"params": {
+						"account": "The address to check    \r"
+					}
+				},
+				"mint(address,uint256)": {
+					"details": "Function to mint tokens\r",
+					"params": {
+						"_amount": "The amount of tokens to mint. Must be less than or equal to the minterAllowance of the caller.\r",
+						"_to": "The address that will receive the minted tokens.\r"
+					},
+					"return": "A boolean that indicates if the operation was successful.\r"
+				},
+				"minterAllowance(address)": {
+					"details": "Get minter allowance for an account\r",
+					"params": {
+						"minter": "The address of the minter\r"
+					}
+				},
+				"owner()": {
+					"details": "Tells the address of the owner\r",
+					"return": "the address of the owner\r"
+				},
+				"pause()": {
+					"details": "called by the owner to pause, triggers stopped state\r"
+				},
+				"removeMinter(address)": {
+					"details": "Function to remove a minter\r",
+					"params": {
+						"minter": "The address of the minter to remove\r"
+					},
+					"return": "True if the operation was successful.\r"
+				},
+				"totalSupply()": {
+					"details": "Get totalSupply of token\r"
+				},
+				"transfer(address,uint256)": {
+					"details": "transfer token for a specified address\r",
+					"params": {
+						"_to": "The address to transfer to.\r",
+						"_value": "The amount to be transferred.\r"
+					},
+					"return": "bool success\r"
+				},
+				"transferFrom(address,address,uint256)": {
+					"details": "Transfer tokens from one address to another.\r",
+					"params": {
+						"_from": "address The address which you want to send tokens from\r",
+						"_to": "address The address which you want to transfer to\r",
+						"_value": "uint256 the amount of tokens to be transferred\r"
+					},
+					"return": "bool success\r"
+				},
+				"transferOwnership(address)": {
+					"details": "Allows the current owner to transfer control of the contract to a newOwner.\r",
+					"params": {
+						"newOwner": "The address to transfer ownership to.\r"
+					}
+				},
+				"unBlacklist(address)": {
+					"details": "Removes account from blacklist\r",
+					"params": {
+						"_account": "The address to remove from the blacklist\r"
+					}
+				},
+				"unpause()": {
+					"details": "called by the owner to unpause, returns to normal state\r"
+				},
+				"updatePauser(address)": {
+					"details": "update the pauser role\r"
+				}
+			},
+			"title": "FiatToken\r"
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/FiatTokenV1.sol": "FiatTokenV1"
+		},
+		"evmVersion": "constantinople",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/FiatTokenV1.sol": {
+			"keccak256": "0x4af10d6d73b435bf8b63c5e8ca60f2d618fecd842a863b739115ac9d6c0b2569",
+			"urls": [
+				"bzzr://4676109493971818e005f53ef664995e5cb011a24fbdfa89b7576f948177fc5b"
+			]
+		}
+	},
+	"version": 1
+}

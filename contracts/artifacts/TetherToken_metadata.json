@@ -721,7 +721,7 @@
 		"compilationTarget": {
 			"contracts/USDT.sol": "TetherToken"
 		},
-		"evmVersion": "byzantium",
+		"evmVersion": "constantinople",
 		"libraries": {},
 		"optimizer": {
 			"enabled": false,
@@ -731,9 +731,9 @@
 	},
 	"sources": {
 		"contracts/USDT.sol": {
-			"keccak256": "0xee08dffd53ece919ca526cfd0a6edcfa326e9d9fc30f432eb127686e3f6a3f4d",
+			"keccak256": "0xb2f71a9c35e6e026d1f34e0531b206624193a27d7f6c50be9814c34bc0652b9f",
 			"urls": [
-				"bzzr://4c65d3b232b699dddcc1c3383104fe805df91627af3a1a5844a84febee217738"
+				"bzzr://1820caf272969c624b589ba7b305ea8ed921288571d6f3b5c48b6af20fd14c2c"
 			]
 		}
 	},

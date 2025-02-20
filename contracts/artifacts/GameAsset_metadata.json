@@ -9,7 +9,7 @@
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "MetadataIPFS",
+						"name": "IPFS_CID",
 						"type": "string"
 					}
 				],
@@ -198,7 +198,7 @@
 					{
 						"indexed": true,
 						"internalType": "uint256",
-						"name": "price_in_uUSDT",
+						"name": "price_in_uUSDC",
 						"type": "uint256"
 					}
 				],
@@ -232,9 +232,35 @@
 			},
 			{
 				"inputs": [],
+				"name": "AssetMetadata",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "Purchase",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "USDC",
+				"outputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -275,32 +301,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "getAddress",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getApprove",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -314,38 +314,6 @@
 						"internalType": "address",
 						"name": "",
 						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_address",
-						"type": "address"
-					}
-				],
-				"name": "getBalance",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getPrice",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -428,6 +396,19 @@
 						"internalType": "address",
 						"name": "",
 						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "price_in_uUSDC",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -614,19 +595,6 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "usdt",
-				"outputs": [
-					{
-						"internalType": "contract IERC20",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -769,7 +737,7 @@
 		"compilationTarget": {
 			"contracts/GameAsset.sol": "GameAsset"
 		},
-		"evmVersion": "london",
+		"evmVersion": "constantinople",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -934,11 +902,11 @@
 			]
 		},
 		"contracts/GameAsset.sol": {
-			"keccak256": "0xf8ce2a060ef89d2560e6a75f5e413a8fe4c84b76013c973c7fbfe1b06c4c920a",
+			"keccak256": "0xb252d9fc32b49aa6a67499154366dd87544db74deec9219988295cb1a48b9d1f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8d0bdbed3261b1f68ab7e20f50522d87ebe50cfffb13b2fc0bdbb394202d7ff0",
-				"dweb:/ipfs/QmbrQtV8ibXSU3bpEmMWTjPAirTyefzy5TYR8iau3yCFpd"
+				"bzz-raw://f36aed473880746e71592096dd75eff7d81e5d09fa52960bdaf5c5552057fb76",
+				"dweb:/ipfs/QmRMhCC23NBb4Ra1o451eV5W24JXesqBbFwW3DgTaWTNMF"
 			]
 		}
 	},

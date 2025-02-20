@@ -93,7 +93,7 @@
 		"compilationTarget": {
 			"contracts/GameAsset.sol": "IERC20"
 		},
-		"evmVersion": "london",
+		"evmVersion": "constantinople",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -218,11 +218,11 @@
 			]
 		},
 		"contracts/GameAsset.sol": {
-			"keccak256": "0x6ab09653764fac7010169a376736c874d81a9bce13ac3e1eff3521eb7ea6579b",
+			"keccak256": "0xda57361a7082f150fcbf8b4eddfa9d8d4dc7e6c98ed6c02c16ef7e81da1b4cc3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a24190cfd15b6347e2c78bfc2a5e4617db112b8df894c4cb07fd0d6f1b40fa63",
-				"dweb:/ipfs/QmdpUvmxKQkPLJZ9Sspd5y2DezA4XYqqtNQrPrB3ANdcXZ"
+				"bzz-raw://871fd8f70cb6a354ee5702b7301b773d5488f39a6c5347ac32a9581e19ca8a4f",
+				"dweb:/ipfs/QmXjVntXmsb51ff8yHNmcCf6P7jYVbjFTRopHG64vaCU99"
 			]
 		}
 	},
